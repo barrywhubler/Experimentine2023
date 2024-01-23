@@ -15,7 +15,8 @@ public class moverScript : MonoBehaviour
     [SerializeField] GameObject[] onLegs;
     [SerializeField] GameObject[] offLegs;
     private float legFloat = 0;
-    public float antSpeed = 20;
+    [SerializeField] public float antSpeed = 20;
+    //[SerializeField] bool powerUp = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -49,6 +50,15 @@ public class moverScript : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         transform.Translate(xValue, yValue, -Input.GetAxis("Vertical"));
+        //if(collision.gameObject.name == "PowerUpCapsule")
+        //{
+        //    if(powerUp == false) { 
+        //        powerUp = true;
+        //        GetComponent<MeshRenderer>().material.color = Color.yellow;
+        //        antSpeed *= 2.0f;
+        //        //collision.gameObject.GetComponent(enabled) = false;
+        //    }
+        //}
     }
     void PlayerMovement()
     {

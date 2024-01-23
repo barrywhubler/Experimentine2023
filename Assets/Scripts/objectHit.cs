@@ -7,6 +7,7 @@ public class objectHit : MonoBehaviour
     private Color myColor;
     private float oneSecond;
     bool isHit = false;
+    Color playerColor;
     // Start is called before the first frame update
     void Start()
     {

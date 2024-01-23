@@ -4,37 +4,76 @@ using UnityEngine;
 
 public class RocketMovement : MonoBehaviour
 {
-    int a = 1;
     float rForceX;
     float rForceY;
     float rForceZ;
     Rigidbody rb;
+
     [SerializeField] float mainThrust = 1000.0f;
     [SerializeField] float helpThrust = 80.0f;
     [SerializeField] float rotThrust = 150.0f;
+    [SerializeField] AudioClip mainEngine;
+    [SerializeField] ParticleSystem BoosterRSParticle;
+    [SerializeField] int boosterParticleCount = 1000;
+    ParticleSystem.EmissionModule myRSEmissionModule;
+    public float grabFloat = 1.0f;
+
+    [SerializeField] AudioSource movementAudioSource;
 
     // Start is called before the first frame update
     void Start()
     {
-        a++;
+
         rb = GetComponent<Rigidbody>();
+        //audioSource = GetComponent<AudioSource>();
+        //myRSEmissionModule = BoosterRSParticle.emission;
+        myRSEmissionModule = BoosterRSParticle.emission;
+        Debug.Log("" + myRSEmissionModule);
+        myRSEmissionModule.rateOverTime = 0;
+        //BoosterRSParticle.GetComponent<em>
     }
 
     void ProcessThrust()
     {
-        rForceX = 1.0f * Time.deltaTime * helpThrust;
-        rForceY = 1.0f * Time.deltaTime * mainThrust;
+
+        if (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W))
+        {
+            StartThrusting();
+
+        }
+        else
+        {
+            StopThrusting();
+        }
+        if (Input.GetKeyUp(KeyCode.UpArrow) || Input.GetKeyUp(KeyCode.W))
+        {
+            movementAudioSource.Stop();
+        }
+    }
+
+
+    private void StartThrusting()
+    {
+        rForceX = 1.0f * Time.deltaTime * helpThrust * grabFloat;
+        rForceY = 1.0f * Time.deltaTime * mainThrust * grabFloat;
         rForceZ = 0.0f;
-        if (Input.GetKey(KeyCode.UpArrow))
+        rb.AddRelativeForce(rForceX, rForceY, rForceZ);
+        if (!movementAudioSource.isPlaying)
         {
-            rb.AddRelativeForce(rForceX, rForceY, rForceZ);
-            //Debug.Log("Up is pressed, Doki doki");
+            movementAudioSource.PlayOneShot(mainEngine);
         }
-        else if (Input.GetKey(KeyCode.W))
+        if (!BoosterRSParticle.isPlaying)
         {
-            rb.AddRelativeForce(rForceX, rForceY, rForceZ);
-            //Debug.Log("Up is pressed, Doki doki");
+            BoosterRSParticle.Play();
         }
+        myRSEmissionModule.rateOverTime = boosterParticleCount;
+    }
+
+    private void StopThrusting()
+    {
+        //BoosterRSParticle.Pause();
+        myRSEmissionModule.rateOverTime = 0;
+        Debug.Log("BOOOOOOOOOOOOOOOOOOOOOOOOOOO");
     }
 
     void ProcessMovement()

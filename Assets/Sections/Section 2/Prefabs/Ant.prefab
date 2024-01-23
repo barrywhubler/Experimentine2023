@@ -1417,6 +1417,7 @@ GameObject:
   - component: {fileID: 1967319940191572135}
   - component: {fileID: 6560503936567005752}
   - component: {fileID: 8820529939646244334}
+  - component: {fileID: 4328843199237335958}
   m_Layer: 0
   m_Name: Ant
   m_TagString: Untagged
@@ -1480,6 +1481,7 @@ MonoBehaviour:
   - {fileID: 6404714640673661582}
   - {fileID: 8477607334207483357}
   antSpeed: 20
+  powerUp: 0
 --- !u!136 &1967319940191572135
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1542,6 +1544,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5363eb87505e92b44b3b95363bfbf92d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scorerText: {fileID: 0}
+  basheds: 0
+--- !u!114 &4328843199237335958
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8191172351174680384}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9488100986685c048979d904941fc5e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  antMeshRenderer:
+  - {fileID: 6972733538719123981}
+  - {fileID: 4815520718457953628}
+  - {fileID: 1518782956131676419}
+  antColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &8242520669223712581
 GameObject:
   m_ObjectHideFlags: 0
