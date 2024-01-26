@@ -1164,6 +1164,7 @@ MonoBehaviour:
   mainEngine: {fileID: 8300000, guid: bceee3ed3c1c0434fbc7b838ab16b899, type: 3}
   BoosterRSParticle: {fileID: 6975046935839431483}
   boosterParticleCount: 200
+  grabFloat: 1
   movementAudioSource: {fileID: 2596390655846697627}
 --- !u!54 &7547711013671377428
 Rigidbody:
@@ -1324,9 +1325,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   boom: {fileID: 8300000, guid: b4402c242de3a2143af442d55afb00e2, type: 3}
   completetionDing: {fileID: 8300000, guid: 2e6c1c6ea4126984d91c29480ecd2eab, type: 3}
+  squirrelNom: {fileID: 8300000, guid: 0c5ed6dcf6980b249af1ced7cabf79e7, type: 3}
   countdownToReload: 3
   countdownToNext: 1
-  invincibleTimer: 0.5
+  invincibleTimer: 1.5
   invincibleTime: 0.5
   SuccessRSParticle: {fileID: 7957570263084453514}
   FailureRSParticle: {fileID: 7889243652589961360}
@@ -2768,7 +2770,7 @@ Transform:
   m_GameObject: {fileID: 7709320882560818699}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.52, y: 0.77, z: -0.019}
+  m_LocalPosition: {x: 0.92, y: 0.77, z: -0.019}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

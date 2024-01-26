@@ -14,12 +14,12 @@ public class LittleGrabberScript : MonoBehaviour
     [SerializeField] float grabInvincible = 0.1f;
     Vector3 differenceVector3;
 
-    
+
 
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     private void OnTriggerEnter(Collider other)
@@ -27,7 +27,7 @@ public class LittleGrabberScript : MonoBehaviour
          if (other.gameObject.tag == "Obstacle")
         {
             Debug.Log("Totally 11111111111111111111111111111111111111111111111");
-            if (collisionCounter < 0)
+            if (collisionCounter > 0)
             {
                 collisionCounter++;
             }

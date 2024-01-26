@@ -9,9 +9,10 @@ public class CollisionHandler : MonoBehaviour
 
     [SerializeField] AudioClip boom;
     [SerializeField] AudioClip completetionDing;
+    [SerializeField] AudioClip squirrelNom;
     [SerializeField]float countdownToReload = 3.0f;
     [SerializeField] float countdownToNext = 1.0f;
-    [SerializeField] float invincibleTimer = 0.5f;
+    [SerializeField] float invincibleTimer = 1f;
     public float invincibleTime = 0.5f;
     [SerializeField] ParticleSystem SuccessRSParticle;
     [SerializeField] ParticleSystem FailureRSParticle;
@@ -50,6 +51,7 @@ public class CollisionHandler : MonoBehaviour
                     break;
                 case "Fuel":
                     Debug.Log(collision.gameObject.tag);
+                    GetAcorn(collision.gameObject);
                     break;
                 default:
                     Debug.Log("Nuts!!!");
@@ -61,21 +63,31 @@ public class CollisionHandler : MonoBehaviour
 
     
     }
+
+
     private void LevelCompleted()
     {
         isLevelCompleted = true;
         collisionAudioSource.PlayOneShot(completetionDing);
         SuccessRSParticle.Play();
+        collisionDisabled = true;
         
 
     }
-
+    void GetAcorn(GameObject acorn)
+    {
+        acorn.GetComponent<AcornScript>().EatAcorn();
+        GetComponent<NutScript>().nutCount += 50;
+        collisionAudioSource.PlayOneShot(squirrelNom);
+    }
     void TouchObstacle()
     {
+
+        
         if(findGrabber != null)
         {
             isIsGrabbing = findGrabber.GetComponent<LittleGrabberScript>().isGrabbing;
-            if (!isIsGrabbing && invincibleTime <= 0)
+            if (!isIsGrabbing && invincibleTime <= 0 && !collisionDisabled)
             {
                 BadTouch();
             }
@@ -162,6 +174,8 @@ public class CollisionHandler : MonoBehaviour
     {
 
         int nextSceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
+        Debug.Log(nextSceneIndex + " !!!!!!!!!!!!!!!!!!!!!! " + SceneManager.sceneCount);
+
         if (nextSceneIndex > SceneManager.sceneCount) {
                 nextSceneIndex = 0;
         }

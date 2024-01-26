@@ -8,15 +8,18 @@ TagManager:
   - Friendly
   - Fuel
   - PowerUp
+  - Obstacle
+  - Grabber
+  - Enemy
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Obstacle
   - Water
   - UI
   - TouchNothing
-  - 
+  - Grabber
   - 
   - 
   - 

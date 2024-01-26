@@ -5,14 +5,35 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/Scenes/Section 3 ProjectBoost 0.unity
-    guid: b2a999b94e804c34da3488d08928201c
   - enabled: 1
-    path: Assets/Scenes/Section 3 ProjectBoost over.unity
-    guid: d6177c6b6606d1c42ae03a53cd1bf8cb
+    path: Assets/Level1.unity
+    guid: 52574910a9164114b98e87897776f848
   - enabled: 1
-    path: Assets/Scenes/Section 3 ProjectBoost under.unity
-    guid: 46b69e5229690ba48b34b4bd75101b75
+    path: Assets/Level2.unity
+    guid: cfba642a12c9cc74e9f838ee0e0d9307
+  - enabled: 1
+    path: Assets/Level3.unity
+    guid: d48fda8b6d480c9489529d9ab78f046e
+  - enabled: 1
+    path: Assets/Level4.unity
+    guid: 1b909843195a6044b9170fcd04765c38
+  - enabled: 1
+    path: Assets/Level5.unity
+    guid: 78ad07a3f88c7594d8f1bf12e36113ca
+  - enabled: 1
+    path: Assets/Level6.unity
+    guid: 5b4606a1a4db9534f9e5d33c6c0cb839
+  - enabled: 1
+    path: Assets/Level7.unity
+    guid: 2bc190bcb6779ee489f6a10b488a91a8
+  - enabled: 1
+    path: Assets/Level8.unity
+    guid: a59de620abc4868419fc7c12cffe6574
+  - enabled: 1
+    path: Assets/Level9.unity
+    guid: be97eb3121e4d384db75cd29dbf24964
+  - enabled: 1
+    path: Assets/Level10.unity
+    guid: 5c6e7682d0cbab84d8904a224d8d18d7
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0
