@@ -42,19 +42,19 @@ public class CollisionHandler : MonoBehaviour
             switch (collision.gameObject.tag)
             {
                 case "Friendly":
-                    Debug.Log(collision.gameObject.tag);
+                    //Debug.Log(collision.gameObject.tag);
                     break;
                 case "Finish":
 
-                    Debug.Log(collision.gameObject.tag);
+                    //Debug.Log(collision.gameObject.tag);
                     LevelCompleted();
                     break;
                 case "Fuel":
-                    Debug.Log(collision.gameObject.tag);
+                    //Debug.Log(collision.gameObject.tag);
                     GetAcorn(collision.gameObject);
                     break;
                 default:
-                    Debug.Log("Nuts!!!");
+                    //Debug.Log("Nuts!!!");
                     TouchObstacle();
 
                     break;
@@ -174,9 +174,9 @@ public class CollisionHandler : MonoBehaviour
     {
 
         int nextSceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
-        Debug.Log(nextSceneIndex + " !!!!!!!!!!!!!!!!!!!!!! " + SceneManager.sceneCount);
+        //Debug.Log(nextSceneIndex + " !!!!!!!!!!!!!!!!!!!!!! " + SceneManager.sceneCount);
 
-        if (nextSceneIndex > SceneManager.sceneCount) {
+        if (nextSceneIndex > 9) {
                 nextSceneIndex = 0;
         }
         SceneManager.LoadScene(nextSceneIndex);

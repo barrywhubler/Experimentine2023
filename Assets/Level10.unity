@@ -25,8 +25,8 @@ RenderSettings:
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
   m_AmbientMode: 0
-  m_SubtractiveShadowColor: {r: 0, g: 0.062930584, b: 1, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: f54b64808e841984b8da816bf7b63119, type: 2}
+  m_SubtractiveShadowColor: {r: 0, g: 0.062745094, b: 1, a: 1}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 4bbe2f18322cb894da8028c6f8f67d69, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -752,9 +752,6 @@ MonoBehaviour:
   colorB: 0
   isChangeColor: 1
   movementVector: {x: 90, y: 50, z: 0}
-  oscillationX: 0
-  oscillationY: 0
-  oscillationZ: 0
   movementFactor: 0
   vectorFactor: {x: 40, y: 20, z: 0}
   maxOscillation: 10
@@ -3172,9 +3169,6 @@ MonoBehaviour:
   colorB: 0
   isChangeColor: 1
   movementVector: {x: 30, y: 50, z: 0}
-  oscillationX: 0
-  oscillationY: 0
-  oscillationZ: 0
   movementFactor: 0
   vectorFactor: {x: 40, y: 20, z: 0}
   maxOscillation: 10
@@ -3454,9 +3448,6 @@ MonoBehaviour:
   colorB: 0
   isChangeColor: 1
   movementVector: {x: 50, y: 50, z: 0}
-  oscillationX: 0
-  oscillationY: 0
-  oscillationZ: 0
   movementFactor: 0
   vectorFactor: {x: 40, y: 20, z: 0}
   maxOscillation: 10
@@ -4769,6 +4760,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -45
       objectReference: {fileID: 0}
+    - target: {fileID: 1669216830554132888, guid: 867b0c57d17bc2a4e96e20ab11f94a3b, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2161617615027875284, guid: 867b0c57d17bc2a4e96e20ab11f94a3b, type: 3}
       propertyPath: m_ExcludeLayers.m_Bits
       value: 128
@@ -5545,9 +5540,6 @@ MonoBehaviour:
   colorB: 0
   isChangeColor: 1
   movementVector: {x: 40, y: 20, z: 0}
-  oscillationX: 0
-  oscillationY: 0
-  oscillationZ: 0
   movementFactor: 0
   vectorFactor: {x: 40, y: 20, z: 0}
   maxOscillation: 10

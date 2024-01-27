@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0, g: 0.062930584, b: 1, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: f54b64808e841984b8da816bf7b63119, type: 2}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 2bb243b181894a24489b81610b92537f, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -752,9 +752,6 @@ MonoBehaviour:
   colorB: 0
   isChangeColor: 1
   movementVector: {x: 90, y: 50, z: 0}
-  oscillationX: 0
-  oscillationY: 0
-  oscillationZ: 0
   movementFactor: 0
   vectorFactor: {x: 40, y: 20, z: 0}
   maxOscillation: 10
@@ -3172,9 +3169,6 @@ MonoBehaviour:
   colorB: 0
   isChangeColor: 1
   movementVector: {x: 30, y: 50, z: 0}
-  oscillationX: 0
-  oscillationY: 0
-  oscillationZ: 0
   movementFactor: 0
   vectorFactor: {x: 40, y: 20, z: 0}
   maxOscillation: 10
@@ -3454,9 +3448,6 @@ MonoBehaviour:
   colorB: 0
   isChangeColor: 1
   movementVector: {x: 50, y: 50, z: 0}
-  oscillationX: 0
-  oscillationY: 0
-  oscillationZ: 0
   movementFactor: 0
   vectorFactor: {x: 40, y: 20, z: 0}
   maxOscillation: 10
@@ -5545,9 +5536,6 @@ MonoBehaviour:
   colorB: 0
   isChangeColor: 1
   movementVector: {x: 30, y: 20, z: 0}
-  oscillationX: 0
-  oscillationY: 0
-  oscillationZ: 0
   movementFactor: 0
   vectorFactor: {x: 40, y: 20, z: 0}
   maxOscillation: 10

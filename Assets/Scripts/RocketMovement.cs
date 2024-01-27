@@ -28,7 +28,7 @@ public class RocketMovement : MonoBehaviour
         //audioSource = GetComponent<AudioSource>();
         //myRSEmissionModule = BoosterRSParticle.emission;
         myRSEmissionModule = BoosterRSParticle.emission;
-        Debug.Log("" + myRSEmissionModule);
+        //Debug.Log("" + myRSEmissionModule);
         myRSEmissionModule.rateOverTime = 0;
         //BoosterRSParticle.GetComponent<em>
     }
@@ -73,7 +73,7 @@ public class RocketMovement : MonoBehaviour
     {
         //BoosterRSParticle.Pause();
         myRSEmissionModule.rateOverTime = 0;
-        Debug.Log("BOOOOOOOOOOOOOOOOOOOOOOOOOOO");
+        //Debug.Log("BOOOOOOOOOOOOOOOOOOOOOOOOOOO");
     }
 
     void ProcessMovement()

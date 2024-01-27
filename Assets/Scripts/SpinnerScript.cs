@@ -10,7 +10,7 @@ public class SpinnerScript : MonoBehaviour
     [SerializeField] float countDown = 2.0f;
     float counter = 2.0f;
     float rotationCount = 0.0f;
-    [SerializeField] float countProbability = 20.0f;
+    //[SerializeField] float countProbability = 20.0f;
     bool isSpin = true;
     [SerializeField] float spinSpeed;
     // Start is called before the first frame update

@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0, g: 0.062930584, b: 1, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: f54b64808e841984b8da816bf7b63119, type: 2}
+  m_SkyboxMaterial: {fileID: 2100000, guid: f67a4abd889a4cc4eaed5c5ab34b0620, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -318,9 +318,6 @@ MonoBehaviour:
   colorB: 0
   isChangeColor: 1
   movementVector: {x: 16, y: 4, z: 0}
-  oscillationX: 0
-  oscillationY: 0
-  oscillationZ: 0
   movementFactor: 0
   vectorFactor: {x: 0, y: 0, z: 0}
   maxOscillation: 0.8
@@ -333,6 +330,10 @@ MonoBehaviour:
   isSimpleOscillating: 0
   isFullCircle: 1
   isOcilRotate: 0
+  isRightR: 0
+  isLeftR: 0
+  isFaceLeft: 0
+  birdWings: {fileID: 0}
 --- !u!1001 &197253885
 PrefabInstance:
   m_ObjectHideFlags: 0

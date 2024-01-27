@@ -15,9 +15,9 @@ public class Enemy : MonoBehaviour
 
     Vector3 startingPosition;
     [SerializeField] Vector3 movementVector = new Vector3(1f,1f,1f);
-    [SerializeField] float oscillationX = 0f;
-    [SerializeField] float oscillationY = 0f;
-    [SerializeField] float oscillationZ = 0f;
+    //[SerializeField] float oscillationX = 0f;
+    //[SerializeField] float oscillationY = 0f;
+    //[SerializeField] float oscillationZ = 0f;
     [SerializeField] [Range(-1, 1)] float movementFactor;
     [SerializeField] Vector3 vectorFactor;
     [SerializeField] float maxOscillation = 10f;
@@ -125,7 +125,7 @@ void Start()
 
     void ChannelChanger( float changer, float channel, int inCase)
     {
-        Debug.Log(channel + " " + changer);
+        //Debug.Log(channel + " " + changer);
         channel += changer;
         if (channel < 0)
         {
