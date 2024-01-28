@@ -13,6 +13,7 @@ public class LittleGrabberScript : MonoBehaviour
     [SerializeField] int collisionCounter = 0;
     [SerializeField] float grabInvincible = 0.1f;
     Vector3 differenceVector3;
+    int oldTouchCount = 0;
 
 
 
@@ -70,29 +71,24 @@ public class LittleGrabberScript : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Keypad2) || Input.GetKeyDown(KeyCode.Alpha2))
         {
-            Debug.Log("Totally 000000000000000000000000000000000000000000000");
-            if (canGrab)
-            {
-                //grabberRB.constraints = RigidbodyConstraints.FreezePosition;
-                differenceVector3 = transform.position - rocketSquirrelRB.position;
-                isGrabbing = true;
-                rocketSquirrelRB.useGravity = false;
-                rocketSquirrelGO.GetComponent<RocketMovement>().grabFloat = 0;
+            Grab();
 
-
-            }
         }
         if (Input.GetKeyUp(KeyCode.Keypad2) || Input.GetKeyUp(KeyCode.Alpha2))
         {
-            if (isGrabbing)
-            {
-                //grabberRB.constraints = RigidbodyConstraints.FreezePositionZ;
-                isGrabbing = false;
-                rocketSquirrelRB.useGravity = true;
-                rocketSquirrelRB.AddRelativeForce(-500.0f, 0, 0);
-                rocketSquirrelGO.GetComponent<RocketMovement>().grabFloat = 1;
+            Release();
 
-            }
+        }
+
+        if (Input.touchCount > 0 && oldTouchCount == 0)
+        {
+            Grab();
+
+        }
+        if (Input.touchCount == 0 && oldTouchCount > 0)
+        {
+            Release();
+
         }
         if (isGrabbing)
         {
@@ -103,6 +99,38 @@ public class LittleGrabberScript : MonoBehaviour
             }
         }
     }
+
+
+    void Grab()
+    {
+            //Debug.Log("Totally 000000000000000000000000000000000000000000000");
+            if (canGrab)
+            {
+                //grabberRB.constraints = RigidbodyConstraints.FreezePosition;
+                differenceVector3 = transform.position - rocketSquirrelRB.position;
+                isGrabbing = true;
+                rocketSquirrelRB.useGravity = false;
+                rocketSquirrelRB.velocity = new Vector3(0, 0, 0);
+                rocketSquirrelGO.GetComponent<RocketMovement>().grabFloat = 0;
+
+
+            }
+    }
+    void Release()
+    {
+            if (isGrabbing)
+            {
+                //grabberRB.constraints = RigidbodyConstraints.FreezePositionZ;
+                isGrabbing = false;
+                rocketSquirrelRB.useGravity = true;
+                rocketSquirrelRB.AddRelativeForce(-500.0f, 0, 0);
+                rocketSquirrelGO.GetComponent<RocketMovement>().grabFloat = 1;
+
+            }
+    }
+
+
+
     void RSControlTake()
     {
         //rocketSquirrelRB.position = Vector3.Lerp(rocketSquirrelRB.position, new Vector3(transform.position.x + 0.4f, transform.position.y - 0.0f, transform.position.z), Time.deltaTime * 4.0f);
@@ -127,7 +155,7 @@ public class LittleGrabberScript : MonoBehaviour
         }
 
         ProcessGrab();
-        
+        oldTouchCount = Input.touchCount;
     }
 
     private void GoToRocketSquirrel()

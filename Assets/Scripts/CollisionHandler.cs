@@ -158,6 +158,10 @@ public class CollisionHandler : MonoBehaviour
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(currentSceneIndex);
     }
+    private static void ReloadTitleScene()
+    {
+        SceneManager.LoadScene(0);
+    }
 
     private void IfLevelCompleted()
     {
@@ -176,7 +180,7 @@ public class CollisionHandler : MonoBehaviour
         int nextSceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
         //Debug.Log(nextSceneIndex + " !!!!!!!!!!!!!!!!!!!!!! " + SceneManager.sceneCount);
 
-        if (nextSceneIndex > 9) {
+        if (nextSceneIndex > 10) {
                 nextSceneIndex = 0;
         }
         SceneManager.LoadScene(nextSceneIndex);
@@ -197,6 +201,11 @@ public class CollisionHandler : MonoBehaviour
             else if (Input.GetKeyDown(KeyCode.K))
             {
                 collisionDisabled = !collisionDisabled;
+
+            }
+            else if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                ReloadTitleScene();
 
             }
         }

@@ -17,13 +17,17 @@ public class RocketMovement : MonoBehaviour
     [SerializeField] int boosterParticleCount = 1000;
     ParticleSystem.EmissionModule myRSEmissionModule;
     public float grabFloat = 1.0f;
+    public bool isPhoneTiltMode = false;
+
+    float startPhoneAxisY = 0f;
+    //bool isPhoneBoost = false;
 
     [SerializeField] AudioSource movementAudioSource;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        startPhoneAxisY = Input.acceleration.y;
         rb = GetComponent<Rigidbody>();
         //audioSource = GetComponent<AudioSource>();
         //myRSEmissionModule = BoosterRSParticle.emission;
@@ -35,8 +39,27 @@ public class RocketMovement : MonoBehaviour
 
     void ProcessThrust()
     {
+        //phoneAxisY += Input.acceleration.y;
+        //if( !isPhoneBoost && phoneAxisY >= .05f)
+        //{
+        //    StartThrusting();
+        //}else if(isPhoneBoost && phoneAxisY < .05f)
+        //{
+        //    StopThrusting();
+        //    movementAudioSource.Stop();
+        //}
+        
+        //if (phoneAxisY <= .05f)
+        //{
+        //    isPhoneBoost = true;
+        //}
+        //else
+        //{
+        //    isPhoneBoost = false;
+        //}
+        
 
-        if (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W))
+        if (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W) || Input.acceleration.y > startPhoneAxisY)
         {
             StartThrusting();
 
@@ -44,10 +67,11 @@ public class RocketMovement : MonoBehaviour
         else
         {
             StopThrusting();
-        }
-        if (Input.GetKeyUp(KeyCode.UpArrow) || Input.GetKeyUp(KeyCode.W))
-        {
             movementAudioSource.Stop();
+        }
+        if (Input.GetKeyUp(KeyCode.UpArrow) || Input.GetKeyUp(KeyCode.W) || Input.acceleration.y < startPhoneAxisY)
+        {
+            //movementAudioSource.Stop();
         }
     }
 
@@ -99,8 +123,15 @@ public class RocketMovement : MonoBehaviour
             ApplyRotation(rotThrust);
             //Debug.Log("Left is pressed, Spin");
         }
+        if(Input.acceleration.x > 0.2f)
+        {
+            ApplyRotation(-rotThrust);
+        }else if (Input.acceleration.x < -0.2f)
+        {
+            ApplyRotation(rotThrust);
+        }
 
-        
+
     }
 
     void ApplyRotation(float thrust)

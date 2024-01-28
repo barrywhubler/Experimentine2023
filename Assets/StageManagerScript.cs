@@ -23,6 +23,7 @@ public class StageManagerScript : MonoBehaviour
     {
         string sceneName = SceneManager.GetActiveScene().name; 
         stageText.text = sceneName;
+        
         if (RSGO.GetComponent<NutScript>() != null){
             //nutsComp = RSGO.GetComponent<NutScript>();
         }
@@ -38,6 +39,7 @@ public class StageManagerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //stageText.text = Input.acceleration + "";
         tCounter += Time.deltaTime;
         if (tCounter > 0.025f)
         {
